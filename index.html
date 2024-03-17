@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/icons8-summer-16.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>weather</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Weather App</h1>
+        
+        <div class="tab-container">
+            <div class="tab" user-weather>Your Weather</div>
+            <div class="tab" search-weather>search weather</div>
+        </div>
+
+        <div class="infocontainer">
+
+             <!--grant location tab-->
+            <div class="grantlocation">
+                <img src="/assets/location.png" alt="">
+                <h2>Grant Location Access</h2>
+                <p>Allow acess to get weather information at your location</p>
+                <button class="grantbutton">Grant Location</button>
+            </div>
+            
+            <!--This is for showing your weather-->
+            <div class="user-weather-deatails">
+                <div class="citylocation">
+                    <div class="city">Nagpur</div>
+                    <img src="" alt="" width="25px" height="20px" class="countryflag">
+                </div>
+
+                <div class="weather-description"></div>
+                <img class="weather-img countryflag"></img>
+                <div class="temp"></div>
+                <div class="parameter-data">
+                    <div class="clouds inside">
+                        <img src="/assets/cloud.png" alt="" width="50px" height="50px">
+                        <div class="text">Clouds</div>
+                        <div class="value cloudsvalue"></div>
+                    </div>
+
+                    <div class="windspeed inside">
+                        <img src="/assets/wind.png" alt="" width="50px" height="50px">
+                        <div class="text">Windspeed</div>
+                        <div class="value windspeedvalue"></div>
+                    </div>
+
+                    <div class="Humidity inside">
+                        <img src="/assets/humidity.png" alt="" width="50px" height="50px">
+                        <div class="text">Humidity</div>
+                        <div class="value Humidityvalue"></div>
+                    </div>
+                </div>
+            </div>
+        
+            <!--This is for loading gif-->
+
+            <div class="loading ">
+                <img src="assets/loading.gif" alt="">
+                <p>loading</p>
+
+            </div>
+        
+            <!--This is for searching weather-->
+            
+                <div class="searching-weather">
+                    <div class="searchbar">
+                        <input type="text" placeholder="enter the city here..." name="searchcity" class="searchcity">
+                        <button class="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                               <!--this is result obtained after the searching-->
+
+                    <div class="search-weather-deatails">
+                        <div class="citylocation">
+                            <div class="city"></div>
+                            <img src="" alt="" width="25px" height="20px" class="countryflag">
+                        </div>
+        
+                        <div class="weather-description"></div>
+                        <img class="weather-img countryflag"></img>
+                        <div class="temp"></div>
+                        <div class="parameter-data">
+                            <div class="clouds inside">
+                                <img src="/assets/cloud.png" alt="" width="50px" height="50px">
+                                <div class="text">Clouds</div>
+                                <div class="value cloudsvalue"></div>
+                            </div>
+        
+                            <div class="windspeed inside">
+                                <img src="/assets/wind.png" alt="" width="50px" height="50px">
+                                <div class="text">Windspeed</div>
+                                <div class="value windspeedvalue"></div>
+                            </div>
+        
+                            <div class="Humidity inside">
+                                <img src="/assets/humidity.png" alt="" width="50px" height="50px">
+                                <div class="text">Humidity</div>
+                                <div class="value Humidityvalue"></div>
+                            </div>
+                        </div>
+                </div>
+
+        </div>
+    </div>
+        <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    background-image: linear-gradient(to bottom, rgb(138, 43, 226),rgb(183, 158, 206) );
+}
+.wrapper h1{
+    color: white;
+    padding-top: 2rem;
+}
+.tab-container{
+    color: white;
+    min-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.tab-container .tab{
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+.infocontainer{
+    position: relative;
+    margin-top: 1rem;
+    min-width: 700px;
+    
+}
+.grantlocation,.user-weather-deatails,.loading,.searching-weather{
+    color: white;
+    margin-top: 1rem;
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    scale: 0;
+}
+
+
+.grantlocation img{
+    width: 75px;
+    height: 75px;
+}
+.grantbutton{
+    padding: 10px 20px 10px 20px;
+    color: white;
+    font-size: larger;
+    background-color: lightgreen;
+    border: 0px solid;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+.grantbutton:hover{
+    background-color: chartreuse;
+}
+
+/*This is for styling your weather*/
+.citylocation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.citylocation .city{
+    font-size: 2rem;
+}
+ .weather-description{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+ .temp{
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+ .parameter-data{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    height: 150px;
+    min-width: 500px;
+    gap: 0.5rem;
+}
+.parameter-data .inside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2px;
+    background-color: rgba(128, 128, 128,0.6);
+    border-radius: 0.25rem;
+}
+
+ .parameter-data .inside .text{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+ .parameter-data .inside .value{
+    font-size: 1rem;
+    font-weight: 200;
+}
+/* loading styling*/
+.loading img{
+    width: 150px;
+    height: 150px;
+}
+.loading p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+.fa-serch{
+    width: 1rem;
+    height: 1rem;
+}
+
+.searching-weather .searchbar{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 3rem;
+
+}
+.searchbar{
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: rgb(115, 115, 194);
+}
+.searchbar input{
+    height: 2rem;
+    width: 350px;
+    padding: 2px;
+    background-color: rgba(115, 115, 194,0);
+    color: white;
+    border: 0px;
+    padding-left: 1rem;
+    outline: none;
+}
+.searchbar button{
+    height: 2rem;
+    background-color: rgba(115, 115, 194,0);
+    color: white;
+    font-size: large;
+    padding: 0.2rem;
+    border: 0px;
+    cursor: pointer;
+    padding-right: 1rem;
+}
+input::placeholder{
+    color: white;
+}
+
+
+.search-weather-deatails{
+    color: white;
+    margin-top: 1rem;
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    scale: 0;
+    
+}
+
+
+
+.active{
+    scale: 1;
+}
+.currentTab{
+    background-color: rgb(100, 94, 94);
+
+}
