@@ -6,7 +6,7 @@ var searchTabData = document.querySelector(".search-weather-deatails")
 var  userTab= document.querySelector("[user-weather]")
 var searchTab = document.querySelector("[search-weather]")
 var currentTab = userTab;
-
+var errpage = document.querySelector(".err404page");
 var textinput = document.querySelector(".searchcity");
 var search = document.querySelector(".submit");
 
@@ -38,6 +38,7 @@ function switchTabs(clickedTab){
         else{
             searchweather.classList.remove("active");
             userweather.classList.remove("active");
+            grantloc.classList.add("active");    
             getfromSessionStorage();
         }
     }
@@ -64,6 +65,7 @@ async function fetchuserweather(usercoordinates){
         let response =await  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`);
         let output   = await response.json();
         loadingTab.classList.remove("active");
+        grantloc.classList.remove("active");
         userweather.classList.add("active");
         renderUserWeather(output);
         console.log(output);
@@ -145,7 +147,14 @@ function showPosition(position) {
     fetchuserweather(userCoordinates);
 
 }
-
+textinput.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      event.preventDefault();
+      var cityname = textinput.value;
+      getweatherdetailswithcity(cityname);
+    }
+  });
 
 search.addEventListener("click",()=>{
     var cityname = textinput.value;
@@ -156,11 +165,25 @@ async function getweatherdetailswithcity(city){
     try{
         let response =await  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`);
         let output   = await response.json();
-        searchTabData.classList.add("active");
-        renderUserWeather(output);
-        console.log(output);
+       
+        
+        if(output?.cod == 404){
+            searchTabData.classList.remove("active");
+            errpage.classList.add("active");
+            textinput.value="";
+        }
+        else{
+            errpage.classList.remove("active");
+            searchTabData.classList.add("active");
+            renderUserWeather(output);
+            console.log(output);
+            
+            
+        }
+       
+        
     }
     catch(e){
-        console.log(error);
+        console.log(e);
     }
 }
