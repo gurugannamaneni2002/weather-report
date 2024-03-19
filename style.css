@@ -45,7 +45,7 @@ body {
 .infocontainer{
     position: relative;
     margin-top: 1rem;
-    min-width: 700px;
+    min-width: 500px;
 }
 .grantlocation,.user-weather-deatails,.loading,.searching-weather{
     color: white;
