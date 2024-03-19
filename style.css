@@ -7,7 +7,7 @@ body {
     background-image: linear-gradient(to bottom, rgb(138, 43, 226), rgb(169, 144, 192),rgb(196, 196, 218));
     background-size: cover;
     min-height: 100vh;
-    overflow-x: hidden;
+   
     overflow-y: auto;
 }
 
@@ -43,9 +43,11 @@ body {
     border-radius: 5px;
 }
 .infocontainer{
+    
     position: relative;
+
     margin-top: 1rem;
-    min-width: 500px;
+    min-width: 700px;
 }
 .grantlocation,.user-weather-deatails,.loading,.searching-weather{
     color: white;
